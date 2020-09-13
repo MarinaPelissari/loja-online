@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.thoughtworks.xstream.XStream;
+
 public class Carrinho {
 
 	private List<Produto> produtos = new ArrayList<Produto>();
@@ -70,4 +72,7 @@ public class Carrinho {
 		return produtos;
 	}
 
+	public String toXML() {
+		return new XStream().toXML(this);
+	}
 }
